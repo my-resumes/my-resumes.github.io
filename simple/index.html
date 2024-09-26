@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Create Simple CV / Resume</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link id="pagestyle" href="css/design.css?v=1.1.1" rel="stylesheet" />
+    <script src="js/include.js"></script>
+    <script src="js/github/createRepo.js"></script>
+    <script src="js/github/combineFiles.js"></script>
+    <script src="js/github/commitFiles.js"></script>
+    <script src="js/github/main.js"></script>
+    <style>
+      @media print {
+          .col-lg-8,
+          .col-md-10 {
+              width: 100% !important;  /* Force full width on print */
+              max-width: 100% !important;  /* Override max-width settings */
+          }
+
+          /* Optional: Hide any other elements you don't want in the print version */
+          button {
+              display: none !important;  /* Hide buttons during print */
+          }
+      }
+    </style>
+</head>
+
+<body class="help-center">
+    <header class="position-relative" data-include="header.html"></header>
+
+    <section class="pt-3 pt-md-5 pb-md-5 bg-gray-200">
+        <div class="container">
+            <div class="col-lg-8 col-md-10 mx-auto pb-5">
+                <div class="card shadow-lg">
+                    <div class="card-header bg-gradient-dark p-5 position-relative" id="card-header">
+                        <h3 class="text-white mb-0" contenteditable="true" id="header-text">John Doe</h3>
+                        <p class="text-white opacity-8 mb-4" contenteditable="true" id="location-text">New York, NY, United States</p>
+                        <p class="text-white opacity-8 mb-4" contenteditable="true" id="contact-text">(123) 456-7890 | john.doe@example.com</p>
+                    </div>
+
+                    <div class="card-body p-5 pt-0">
+                        <!-- Profile -->
+                        <div id="profile-section">
+                            <h4 class="mt-5 mb-3" contenteditable="true">PROFILE</h4>
+                            <p contenteditable="true">
+                                Highly motivated software engineer with 5+ years of experience in web development and automation testing. Adept in developing efficient solutions using Python, JavaScript, and cloud technologies. Possesses excellent problem-solving skills and a proven track record of delivering high-quality projects on time.
+                            </p>
+                        </div>
+
+                        <!-- Employment History -->
+                        <div id="employment-section">
+                            <h4 class="mt-5 mb-3" contenteditable="true">EMPLOYMENT HISTORY</h4>
+                            <div contenteditable="true" class="employment-item">
+                                <h5>Senior Software Engineer, ABC Tech</h5>
+                                <p>New York, NY, July 2021 - Present</p>
+                                <p>- Lead a team of developers in building scalable web applications using JavaScript frameworks (React, Node.js).</p>
+                            </div>
+                            <button type="button" class="btn bg-gradient-primary w-auto me-2" onclick="addEmployment()">Add Employment</button>
+                            <button type="button" class="btn bg-gradient-light w-auto me-2" onclick="deleteLastSection('employment-section', 'div')">Delete Last Employment</button>
+                        </div>
+
+                        <!-- Education -->
+                        <div id="education-section">
+                            <h4 class="mt-5 mb-3" contenteditable="true">EDUCATION</h4>
+                            <div contenteditable="true" class="education-item">
+                                <h5>Bachelor of Science in Computer Science, New York University</h5>
+                                <p>New York, NY, Graduated: May 2016</p>
+                            </div>
+                            <button type="button" class="btn bg-gradient-primary w-auto me-2" onclick="addEducation()">Add Education</button>
+                            <button type="button" class="btn bg-gradient-light w-auto me-2" onclick="deleteLastSection('education-section', 'div')">Delete Last Education</button>
+                        </div>
+
+                        <!-- Skills -->
+                        <div id="skills-section">
+                            <h4 class="mt-5 mb-3" contenteditable="true">SKILLS</h4>
+                            <ul contenteditable="true" class="skills-item">
+                                <li>Programming Languages: Python, JavaScript, Java</li>
+                                <li>Frameworks: React, Node.js, Express</li>
+                                <li>Testing: Selenium, Jest, Mocha</li>
+                                <li>Cloud: AWS, Azure</li>
+                                <li>Version Control: Git, GitHub</li>
+                                <li>Agile Methodology, Scrum</li>
+                            </ul>
+                            <button type="button" class="btn bg-gradient-primary w-auto me-2" onclick="addSkill()">Add Skill</button>
+                            <button type="button" class="btn bg-gradient-light w-auto me-2" onclick="deleteLastSection('skills-section', 'li')">Delete Last Skill</button>
+                        </div>
+
+                        <!-- Languages -->
+                        <div id="languages-section">
+                            <h4 class="mt-5 mb-3" contenteditable="true">LANGUAGES</h4>
+                            <ul contenteditable="true" class="language-item">
+                                <li>English - Native</li>
+                                <li>Spanish - Intermediate</li>
+                            </ul>
+                            <button type="button" class="btn bg-gradient-primary w-auto me-2" onclick="addLanguage()">Add Language</button>
+                            <button type="button" class="btn bg-gradient-light w-auto me-2" onclick="deleteLastSection('languages-section', 'li')">Delete Last Language</button>
+                        </div>
+
+                        <!-- Certifications -->
+                        <div id="certifications-section">
+                            <h4 class="mt-5 mb-3" contenteditable="true">CERTIFICATIONS</h4>
+                            <ul contenteditable="true" class="certification-item">
+                                <li>AWS Certified Solutions Architect – Associate</li>
+                                <li>Certified ScrumMaster (CSM)</li>
+                                <li>Microsoft Certified: Azure Fundamentals</li>
+                            </ul>
+                            <button type="button" class="btn bg-gradient-primary w-auto me-2" onclick="addCertification()">Add Certification</button>
+                            <button type="button" class="btn bg-gradient-light w-auto me-2" onclick="deleteLastSection('certifications-section', 'li')">Delete Last Certification</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/core/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="js/simple/simple.js"></script> 
+</body>
+</html>

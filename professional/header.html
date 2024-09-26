@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+  <div class="container-fluid">
+    <a class="navbar-brand font-weight-bold" href="../index.html">
+      Create Your CV / Resume
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navigation"
+      aria-controls="navigation"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navigation">
+      <ul class="navbar-nav mx-auto"></ul>
+      <button
+        type="button"
+        class="btn btn-secondary me-2"
+        onclick="saveCVAsPDF()"
+      >
+        Save as PDF
+      </button>
+      <button
+        type="button"
+        class="btn bg-gradient-info"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModalForm"
+      >
+        Publish as Site
+      </button>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModalForm"
+        tabindex="-1"
+        aria-labelledby="exampleModalForm"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-danger modal-dialog-centered modal-"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-body p-0">
+              <div class="card bg-gray-200 shadow border-0 mb-0">
+                <div class="card-header text-start">
+                  <h3 class="font-weight-bolder text-info text-gradient mb-1">
+                    Publish your CV / Resume
+                  </h3>
+                  <p class="mb-0">Site will be hosted in GitHub</p>
+                </div>
+                <div class="card-body">
+                  <form role="form text-start">
+                    <div class="input-group mb-3">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Name of Site"
+                        aria-label="Name"
+                        aria-describedby="Name"
+                      />
+                    </div>
+                    
+                    <div class="text-center">
+                      <button
+                        type="button"
+                        class="btn bg-gradient-info mt-4 mb-0" onclick="triggerGitHubProcess()"
+                      >
+                        Publish
+                      </button>
+                    </div>
+                  </form>
+                </div>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
