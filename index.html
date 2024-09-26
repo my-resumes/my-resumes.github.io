@@ -10,6 +10,7 @@
 
   <link id="pagestyle" href="css/design.css?v=1.1.1" rel="stylesheet" />
   <script src="js/include.js"></script>
+
 </head>
 
 <body class="help-center">
@@ -21,14 +22,20 @@
         <div class="col-lg-4 mb-lg-0 mb-4">
           <div class="card">
             <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-              <a href="simple/index.html" class="d-block">
+              <a data-bs-toggle="modal" data-bs-target="#dataSelectionModalForm" data-title="Create Simple Resume"
+                data-subtitle="Extract information from the GitHub / linkedin / add manually"
+                data-href="simple/index.html" class="d-block">
                 <img src="img/simple.jpg" class="img-fluid border-radius-lg" />
               </a>
             </div>
 
             <div class="card-body pt-3">
-              <span class="text-gradient text-warning text-uppercase text-xs font-weight-bold my-2">Simple</span>
-              <a href="simple/index.html" class="text-darker card-title h5 d-block">
+              <span class="text-gradient text-warning text-uppercase text-xs font-weight-bold my-2"
+                data-bs-target="#dataSelectionModalForm" data-title="Create Simple Resume"
+                data-subtitle="Extract information from the GitHub / linkedin / add manually"
+                data-href="simple/index.html">Simple</span>
+              <a data-bs-toggle="modal" data-bs-target="#dataSelectionModalForm" data-bs-id="simple"
+                class="text-darker card-title h5 d-block">
                 Simple CV / Resume
               </a>
               <p class="card-description mb-4">
@@ -40,14 +47,19 @@
         <div class="col-lg-4 mb-lg-0 mb-4">
           <div class="card">
             <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-              <a href="creative/index.html" class="d-block">
+              <a data-bs-toggle="modal" data-bs-target="#dataSelectionModalForm" data-title="Create Creative Resume"
+                data-subtitle="Extract information from the GitHub / linkedin / add manually"
+                data-href="creative/index.html" class="d-block">
                 <img src="img/creative.jpg" class="img-fluid border-radius-lg" />
               </a>
             </div>
 
             <div class="card-body pt-3">
               <span class="text-gradient text-info text-uppercase text-xs font-weight-bold my-2">Creative</span>
-              <a href="creative/index.html" class="text-darker card-title h5 d-block">
+              <a data-bs-toggle="modal" data-bs-target="#dataSelectionModalForm"
+                class="text-darker card-title h5 d-block" data-title="Create Creative Resume"
+                data-subtitle="Extract information from the GitHub / linkedin / add manually"
+                data-href="creative/index.html">
                 Creative CV / Resume
               </a>
               <p class="card-description mb-4">
@@ -59,19 +71,25 @@
         <div class="col-lg-4 mb-lg-0 mb-4">
           <div class="card">
             <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-              <a href="professional/index.html" class="d-block">
+              <a data-bs-toggle="modal" data-bs-target="#dataSelectionModalForm" data-title="Create professional Resume"
+                data-subtitle="Extract information from the GitHub / linkedin / add manually"
+                data-href="professional/index.html" class="d-block">
                 <img src="img/professional.jpg" class="img-fluid border-radius-lg" />
               </a>
             </div>
 
             <div class="card-body pt-3">
-              <span class="text-gradient text-warning text-uppercase text-xs font-weight-bold my-2">Professional</span>
-              <a href="professional/index.html" class="card-title h5 d-block text-darker">
+              <span class="text-gradient text-warning text-uppercase text-xs font-weight-bold my-2"
+                data-title="Create professional Resume"
+                data-subtitle="Extract information from the GitHub / linkedin / add manually"
+                data-href="professional/index.html">Professional</span>
+              <adata-bs-toggle="modal" data-bs-target="#dataSelectionModalForm"
+                class="card-title h5 d-block text-darker">
                 Professional CV / Resume
-              </a>
-              <p class="card-description mb-4">
-                Create a beautiful CV to showcase your professional journey.
-              </p>
+                </a>
+                <p class="card-description mb-4">
+                  Create a beautiful CV to showcase your professional journey.
+                </p>
             </div>
           </div>
         </div>
@@ -260,10 +278,59 @@
     </div>
   </section>
 
+  <div class="modal fade" id="dataSelectionModalForm" tabindex="-1" aria-labelledby="exampleModalForm"
+    aria-hidden="true">
+    <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+          <div class="card bg-gray-200 shadow border-0 mb-0">
+            <div class="card-header text-start">
+              <h3 class="font-weight-bolder text-info text-gradient mb-1" id="modalTitle">
+                Create your CV / Resume
+              </h3>
+              <p class="mb-0" id="modalSubtitle">Site will be hosted in GitHub pages</p>
+            </div>
+            <div class="card-body"><form role="form" id="modal-form" method="post" autocomplete="off">
+              <div class="card-body">
+                <div class="mb-4">
+                  <label>GitHub (Optional)</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="https://github.com/create-your-own" id="github">
+                  </div>
+                </div>
+                <div class="mb-4"></div>
+                  <label>linkedIn (Optional)</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="https://www.linkedin.com/in/create-your-own/" id="linkedin">
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <div class="input-group">
+                    <input type="hidden" id="baseurl" >
+                  </div>
+                </div>
+               
+                  <div class="col-md-12">
+                    <button type="button" class="btn bg-gradient-info mt-4 mb-0" style="color: white; float: right;" id="modalActionButton">
+                      Create
+                    </button>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
   <footer class="footer py-5 bg-gradient-dark position-relative overflow-hidden" data-include="scripts/footer.html">
   </footer>
 
   <script src="js/core/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/modal.js"></script>
 </body>
 
 </html>

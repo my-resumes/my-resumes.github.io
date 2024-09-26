@@ -84,3 +84,13 @@ function deleteLastSection(sectionId, elementTag) {
     section[section.length - 1].remove();
   }
 }
+
+
+function bindData(data) {
+    for (const key in data) {
+        const elements = document.querySelectorAll(`[data-bind="${key}"]`);
+        elements.forEach((element) => {
+            element.textContent = data[key];
+        });
+    }
+}

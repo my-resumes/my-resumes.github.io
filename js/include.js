@@ -14,5 +14,4 @@ function includeHTML() {
   });
 }
 
-// Load the header and footer after the DOM is loaded
 document.addEventListener("DOMContentLoaded", includeHTML);
