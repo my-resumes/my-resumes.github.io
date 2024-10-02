@@ -14,12 +14,20 @@ async function fetchFileContent(url) {
       return null;
     }
   }
-  
+
+  function removeContentEditableAttributes(container) {
+    // Remove contenteditable attributes from all elements
+    const editableElements = container.querySelectorAll('[contenteditable="true"]');
+    editableElements.forEach((element) => {
+        element.removeAttribute('contenteditable'); // Remove contenteditable attribute
+    });
+}
+
   async function combineFiles() {
     const filesToUpload = [
-      { path: 'sample/simple.html', url: '/sample/simple.html' },
-      { path: 'sample/css/style.css', url: '/sample/css/style.css' },
-      { path: 'sample/js/script.js', url: '/sample/js/script.js' }
+      { path: 'index.html', url: '/simple/index.html' },
+      { path: 'css/design.css', url: '/simple/css/design.css' },
+      { path: 'js/simple.js', url: '/simple/js/simple.js' }
     ];
   
     for (const file of filesToUpload) {
@@ -28,7 +36,7 @@ async function fetchFileContent(url) {
         console.error(`Failed to get content for ${file.path}`);
       }
     }
-  
+
     return filesToUpload;
   }
   

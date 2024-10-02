@@ -11,7 +11,7 @@ async function createGitHubRepo(repoName, token) {
       const response = await fetch("https://api.github.com/user/repos", {
         method: "POST",
         headers: {
-          Authorization: `token ${token}`,
+          Authorization: `token ${atob(token)}`,
           Accept: "application/vnd.github.v3+json",
         },
         body: JSON.stringify(repoData),

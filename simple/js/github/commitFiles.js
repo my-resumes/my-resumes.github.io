@@ -14,7 +14,7 @@ async function commitFilesToRepo(repoFullName, files, token) {
           {
             method: "PUT",
             headers: {
-              Authorization: `token ${token}`,
+              Authorization: `token ${atob(token)}`,
               Accept: "application/vnd.github.v3+json",
             },
             body: JSON.stringify(fileData),
@@ -44,7 +44,7 @@ async function commitFilesToRepo(repoFullName, files, token) {
         {
           method: "POST",
           headers: {
-            Authorization: `token ${token}`,
+            Authorization: `token ${atob(token)}`,
             Accept: "application/vnd.github.v3+json",
           },
           body: JSON.stringify(pagesData),

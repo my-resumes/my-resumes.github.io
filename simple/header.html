@@ -25,7 +25,7 @@
               <div class="card-body">
                 <form role="form text-start">
                   <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Name of Site" aria-label="Name"
+                    <input type="text" id="siteName" class="form-control" placeholder="Name of Site" aria-label="Name"
                       aria-describedby="Name" />
                   </div>
 
@@ -33,6 +33,7 @@
                     <button type="button" class="btn bg-gradient-info mt-4 mb-0" onclick="triggerGitHubProcess()">
                       Publish
                     </button>
+                    <p id="repoUrl" class="mt-3" style="display: none;"></p>
                   </div>
                 </form>
               </div>
@@ -47,6 +48,7 @@
     aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+ 
 
   </div>
 </nav>
