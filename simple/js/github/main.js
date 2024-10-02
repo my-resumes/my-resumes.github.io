@@ -18,10 +18,16 @@ function triggerGitHubProcess() {
           enableGitHubPages(repoFullName, nekot.split("").reverse().join(""));
         });
       });
+    const publishFrom = document.getElementById("publishform");
+    publishFrom.style.display = "none";
     const repoUrl = "https://my-story-teller.github.io/"+siteName;
     const repoUrlElement = document.getElementById("repoUrl");
-    repoUrlElement.textContent = `Your repository URL: ${repoUrl}`;
     repoUrlElement.style.display = "block";
+    repoUrlElement.onclick = function() {
+      window.open(repoUrl, '_blank');
+    };
+    
+    
     }
     
   });
